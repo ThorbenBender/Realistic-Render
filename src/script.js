@@ -106,7 +106,7 @@ const floorColorTexture = textureLoader.load(
 const floorNormalTexture = textureLoader.load(
   "/textures/wood_cabinet_worn_long/wood_cabinet_worn_long_nor_gl_1k.png"
 );
-const floorRoughnessTexture = textureLoader.load(
+const floorAoRoughnessMetalnessTexture = textureLoader.load(
   "/textures/wood_cabinet_worn_long/wood_cabinet_worn_long_arm_1k.jpg"
 );
 
@@ -117,7 +117,7 @@ const wallColorTexture = textureLoader.load(
 const wallNormalTexture = textureLoader.load(
   "/textures/castle_brick_broken_06/castle_brick_broken_06_nor_gl_1k.png"
 );
-const wallRoughnessTexture = textureLoader.load(
+const wallAoRoughnessMetalnessTexture = textureLoader.load(
   "/textures/castle_brick_broken_06/castle_brick_broken_06_arm_1k.jpg"
 );
 
@@ -127,7 +127,9 @@ const floor = new THREE.Mesh(
   new THREE.MeshStandardMaterial({
     map: floorColorTexture,
     normalMap: floorNormalTexture,
-    roughnessMap: floorRoughnessTexture,
+    roughnessMap: floorAoRoughnessMetalnessTexture,
+    aoMap: floorAoRoughnessMetalnessTexture,
+    metalnessMap: floorAoRoughnessMetalnessTexture,
   })
 );
 floor.rotation.x = -Math.PI * 0.5;
@@ -138,7 +140,9 @@ const wall = new THREE.Mesh(
   new THREE.MeshStandardMaterial({
     map: wallColorTexture,
     normalMap: wallNormalTexture,
-    roughnessMap: wallRoughnessTexture,
+    roughnessMap: wallAoRoughnessMetalnessTexture,
+    aoMap: wallAoRoughnessMetalnessTexture,
+    metalnessMap: wallAoRoughnessMetalnessTexture,
   })
 );
 wall.position.z = -5;
